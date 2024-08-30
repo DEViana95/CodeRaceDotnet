@@ -34,6 +34,25 @@ namespace BaseApi.Domain.Entities.Base
         }
 
         /// <summary>
+        /// Resposta de sucesso.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public ResponseData ResponseSuccess(
+            string message
+        )
+        {
+            return new ResponseData
+            {
+                Success = true,
+                StatusCode = HttpStatusCode.OK,
+                Timestamp = DateTime.Now,
+                Message = message,
+                TypeMessage = "success"
+            };
+        }
+
+        /// <summary>
         /// Resposta de erro.
         /// </summary>
         /// <param name="message"></param>
