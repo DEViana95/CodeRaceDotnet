@@ -310,10 +310,9 @@ namespace BaseApi.Domain.Services
                     .FirstOrDefault();
 
                 if (user is null)
-                    throw new Exception("Usuário não encontrado.");
+                    throw new Exception("Login ou senha estão incorretos.");
 
                 return response.ResponseSuccess(
-                    response: true,
                     message: "Login efetuado com sucesso!"
                 );
             }

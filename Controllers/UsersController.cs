@@ -103,5 +103,27 @@ namespace BaseApi.Controllers
                 response
             );
         }
+
+        /// <summary>
+        /// Acesso ao usuário.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        [HttpGet("login")]
+        public IActionResult Delete(
+            [FromQuery] string login,
+            [FromQuery] string password
+        )
+        {
+            var response = _userService.Login(
+                login: login,
+                password: password
+            );
+
+            return Ok(
+                response
+            );
+        }
     }
 }
