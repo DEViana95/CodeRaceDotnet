@@ -1,0 +1,56 @@
+# Ignorar pastas bin e obj
+bin/
+obj/
+
+# Ignorar outras pastas e arquivos do Visual Studio
+.vscode/
+.vs/
+*.user
+*.suo
+*.log
+*.userosscache
+*.sln.docstates
+
+# Ignorar pacotes NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Ignorar arquivos de build
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.log
+*.obj
+*.bin
+*.lib
+*.ncb
+*.sdf
+*.opendb
+*.tlog
+
+# Ignorar configurações do sistema operacional
+[Tt]humbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Ignorar arquivos gerados
+*.mdf
+*.ldf
+*.ide
+
+# Ignorar pastas e arquivos do Rider/Resharper
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# Ignorar arquivos de testes
+TestResults/
+*.trx
+*.coverage
+*.testsettings
+*.vsmdi
+*.orderedtest
+*.coveragexml

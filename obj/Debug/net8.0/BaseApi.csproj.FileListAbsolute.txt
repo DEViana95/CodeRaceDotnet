@@ -104,3 +104,4 @@ c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\BaseApi\bin\Debug\net8.0\ru\Micros
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\BaseApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\BaseApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\BaseApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\BaseApi\obj\Debug\net8.0\BaseApi.sourcelink.json
