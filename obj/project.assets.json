@@ -2756,11 +2756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
+      "projectUniqueName": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
       "projectName": "BaseApi",
-      "projectPath": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
+      "projectPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
       "packagesPath": "C:\\Users\\Gabriel Viana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\obj\\",
+      "outputPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gabriel Viana\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2843,5 +2843,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ocorreu um erro ao obter os dados de vulnerabilidade do pacote: Não é possível carregar o índice de serviço para a origem https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

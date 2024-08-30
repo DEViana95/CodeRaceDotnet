@@ -2,12 +2,13 @@ using System.Net;
 using BaseApi.Controllers.DTO;
 using BaseApi.Domain.Entities;
 using BaseApi.Domain.Entities.Base;
+using BaseApi.Domain.Services.Base;
 using BaseApi.Infra.Data;
 using BaseApi.Tools;
 
 namespace BaseApi.Domain.Services
 {
-    public interface IUsersService
+    public interface IUsersService : IServiceBase
     {
         /// <summary>
         /// Busca os usuários páginados. 
@@ -55,9 +56,23 @@ namespace BaseApi.Domain.Services
         ResponseData Delete(
             long id
         );
+
+        /// <summary>
+        /// Acesso ao usuário.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        ResponseData Login(
+            string login,
+            string password
+        );
     }
 
-    public class UsersService : IUsersService
+    /// <summary>
+    /// Classe de serviços de usuário.
+    /// </summary>
+    public class UsersService : ServiceBase, IUsersService
     {
         private readonly AppDbContext _context;
         public UsersService(
@@ -160,7 +175,7 @@ namespace BaseApi.Domain.Services
 
                 _context.Users.Add(user);
 
-                var result = _context.SaveChanges();
+                var result = Commit(_context);
 
                 if(result == default)
                     throw new Exception("Erro ao criar novo usuário.");
@@ -209,7 +224,7 @@ namespace BaseApi.Domain.Services
 
                 _context.Users.Update(user);
 
-                var result = _context.SaveChanges();
+                var result = Commit(_context);
 
                 if(result == default)
                     throw new Exception("Erro ao editar usuário.");
@@ -249,13 +264,57 @@ namespace BaseApi.Domain.Services
 
                 _context.Users.Remove(user);
 
-                var result = _context.SaveChanges();
+                var result = Commit(_context);
 
                 if(result == default)
                     throw new Exception("Erro ao excluir usuário.");
 
                 return response.ResponseSuccess(
                     message: "Usuário excluído com sucesso!"
+                );
+            }
+            catch (Exception ex)
+            {
+                return response.ResponseError(
+                    message: ex.Message,
+                    statusCode: HttpStatusCode.BadRequest
+                );
+            }
+        }
+
+        /// <summary>
+        /// Acesso ao usuário.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public ResponseData Login(
+            string login,
+            string password
+        )
+        {
+            var response = new ResponseData();
+            try
+            {
+                if (
+                    string.IsNullOrWhiteSpace(login) ||
+                    string.IsNullOrWhiteSpace(password)
+                )
+                    throw new Exception("Dados de login ou senha inválidos.");
+
+                var user = _context.Users
+                    .Where(x => 
+                        x.Login == login &&
+                        x.Password == password
+                    )
+                    .FirstOrDefault();
+
+                if (user is null)
+                    throw new Exception("Usuário não encontrado.");
+
+                return response.ResponseSuccess(
+                    response: true,
+                    message: "Login efetuado com sucesso!"
                 );
             }
             catch (Exception ex)
