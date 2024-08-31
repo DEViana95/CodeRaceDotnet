@@ -33,11 +33,21 @@ INSERT INTO incident_types VALUES
 DROP TABLE IF EXISTS parameters;
 CREATE TABLE IF NOT EXISTS parameters(
 	id SERIAL PRIMARY KEY,
-	coordinate_one DECIMAL NOT NULL,
-	coordinate_two DECIMAL NOT NULL,
-	coordinate_three DECIMAL NOT NULL,
-	coordinate_four DECIMAL NOT NULL,
 	cellphone TEXT NOT NULL,
 	administrator_id BIGINT NOT NULL,
 	CONSTRAINT fk_nome FOREIGN KEY (administrator_id) REFERENCES users(id)
 );
+
+INSERT INTO parameters VALUES
+	(DEFAULT, '55997011812', 4);
+
+DROP TABLE IF EXISTS cities;
+CREATE TABLE IF NOT EXISTS cities(
+	id SERIAL PRIMARY KEY,
+	title TEXT NOT NULL,
+	lat DECIMAL(9, 6) NOT NULL,
+	lng DECIMAL(9, 6) NOT NULL
+);
+
+INSERT INTO cities VALUES
+	(DEFAULT, 'Santa Maria', -29.6914, -53.8008);
