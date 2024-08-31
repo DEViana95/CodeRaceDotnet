@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fBjmX2EHIsw=",
+  "dgSpecHash": "XIYlrW8k5go=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
+  "projectFilePath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gabriel Viana\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Gabriel Viana\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.6\\microsoft.aspnetcore.openapi.8.0.6.nupkg.sha512",

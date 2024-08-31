@@ -15,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 #region Injeção de depêndencias
+builder.Services.AddScoped<ICitiesService, CitiesService>();
 builder.Services.AddScoped<IUsersService, UsersService>();
 #endregion Injeção de depêndencias
 
