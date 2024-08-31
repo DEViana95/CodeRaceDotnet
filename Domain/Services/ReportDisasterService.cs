@@ -66,9 +66,11 @@ namespace BaseApi.Domain.Services
                     Lat = dto.Lat,
                     Lng = dto.Lng,
                     TxId = dto.TxId,
-                    Gravity = dto.Gravity,
+                    Gravity = (GravityEnum)dto.Gravity,
                     Type = dto.Type,
+                    CellphoneNumber = dto.CellphoneNumber,
                     Status = StatusEnum.ReceivedRegister,
+                    Created = DateTime.UtcNow
                 };
 
                  _context.ReportDisaster.Add(reportDisaster);

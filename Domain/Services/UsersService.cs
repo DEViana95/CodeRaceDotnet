@@ -97,7 +97,7 @@ namespace BaseApi.Domain.Services
             try
             {
                 var result = _context.Users
-                    .Skip(PaginatedMethods.CalculateStartRow(skip, take)) 
+                    .Skip(Tools.Tools.CalculateStartRow(skip, take)) 
                     .Take(take)
                     .ToList();
 
