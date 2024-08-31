@@ -81,6 +81,11 @@ namespace BaseApi.Domain.Services
             var response = new ResponseData();
             try
             {
+                var validateTxId = Tools.Tools.ValidateTxId(dto.TxId);
+
+                if (!validateTxId)
+                    throw new Exception("CPF inválido.");
+
                 var reportDisaster = new ReportDisaster
                 {
                     Lat = dto.Lat,

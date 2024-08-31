@@ -166,6 +166,11 @@ namespace BaseApi.Domain.Services
                 if (dto is null)
                     throw new Exception("Dados inválidos.");
 
+                var validateTxId = Tools.Tools.ValidateTxId(dto.Login);
+
+                if (!validateTxId)
+                    throw new Exception("CPF inválido.");
+
                 var user = new Users
                 {
                     Login = dto.Login,
@@ -212,6 +217,11 @@ namespace BaseApi.Domain.Services
 
                 if (user is null)
                     throw new Exception("Usuário não encontrado!");
+
+                var validateTxId = Tools.Tools.ValidateTxId(user.Login);
+
+                if (!validateTxId)
+                    throw new Exception("CPF inválido.");
 
                 if (dto.Login != user.Login)
                     user.Login = dto.Login;
@@ -301,6 +311,11 @@ namespace BaseApi.Domain.Services
                     string.IsNullOrWhiteSpace(password)
                 )
                     throw new Exception("Dados de login ou senha inválidos.");
+
+                var validateTxId = Tools.Tools.ValidateTxId(login);
+
+                if (!validateTxId)
+                    throw new Exception("CPF inválido.");
 
                 var user = _context.Users
                     .Where(x => 
