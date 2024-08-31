@@ -7,5 +7,7 @@ namespace BaseApi.Controllers.DTO
         public virtual string Cellphone { get; set; }
 
         public virtual long? AdministratorId { get; set; }
+        
+        public virtual string Phone { get; set; }
     }
 }

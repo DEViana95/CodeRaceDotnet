@@ -86,6 +86,9 @@ namespace BaseApi.Domain.Services
                 if (!string.IsNullOrEmpty(dto.Cellphone) && dto.Cellphone != parameters.Cellphone)
                     parameters.Cellphone = dto.Cellphone;
 
+                if (!string.IsNullOrEmpty(dto.Phone) && dto.Phone != parameters.Phone)
+                    parameters.Phone = dto.Phone;
+
                 if (dto.AdministratorId.HasValue && dto.AdministratorId != parameters.AdministratorId)
                     parameters.AdministratorId = dto.AdministratorId.Value;
 
