@@ -14,10 +14,15 @@ public class AppDbContext : DbContext
 
     public DbSet<Cities> Cities { get; set; }
     public DbSet<Users> Users { get; set; }
+    public DbSet<IncidentTypes> IncidentTypes { get; set; }
+    public DbSet<Parameters> Parameters { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Aplicar o mapeamento das entidade
             modelBuilder.ApplyConfiguration(new CitiesMapping());
+            modelBuilder.ApplyConfiguration(new IncidentTypesMapping());
+            modelBuilder.ApplyConfiguration(new ParametersMapping());
             modelBuilder.ApplyConfiguration(new UsersMapping());
 
             base.OnModelCreating(modelBuilder);
