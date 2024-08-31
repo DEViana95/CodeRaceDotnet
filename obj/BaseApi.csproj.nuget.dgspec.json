@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj": {}
+    "c:\\Users\\GV-DIEGO-TESTEDEV\\Desktop\\CodeRace\\CodeRaceDotnet\\BaseApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj": {
+    "c:\\Users\\GV-DIEGO-TESTEDEV\\Desktop\\CodeRace\\CodeRaceDotnet\\BaseApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj",
+        "projectUniqueName": "c:\\Users\\GV-DIEGO-TESTEDEV\\Desktop\\CodeRace\\CodeRaceDotnet\\BaseApi.csproj",
         "projectName": "BaseApi",
-        "projectPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj",
-        "packagesPath": "C:\\Users\\Gabriel Viana\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\obj\\",
+        "projectPath": "c:\\Users\\GV-DIEGO-TESTEDEV\\Desktop\\CodeRace\\CodeRaceDotnet\\BaseApi.csproj",
+        "packagesPath": "C:\\Users\\GV-DIEGO-TESTEDEV\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\GV-DIEGO-TESTEDEV\\Desktop\\CodeRace\\CodeRaceDotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Gabriel Viana\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\GV-DIEGO-TESTEDEV\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -103,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

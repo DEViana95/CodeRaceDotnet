@@ -22,7 +22,7 @@ namespace BaseApi.Infra.Data.Mapping
                 .HasColumnName("phone");
 
             builder.Property(u => u.Telegram)
-                .HasColumnName("phone");
+                .HasColumnName("telegram");
         }
     }
 }

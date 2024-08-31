@@ -84,7 +84,7 @@ namespace BaseApi.Domain.Services
                     throw new Exception("Dados inválidos.");
 
                 var parameters = _context.Parameters
-                    .Where(x => x.Id == dto.Id)
+                    .Where(x => x.Id > 0)
                     .FirstOrDefault();
 
                 if (parameters is null)
