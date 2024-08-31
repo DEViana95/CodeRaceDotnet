@@ -45,7 +45,7 @@ namespace BaseApi.Domain.Services
                     TxId = dto.TxId,
                     Gravity = dto.Gravity,
                     Type = dto.Type,
-                    Status = dto.Status,
+                    Status = StatusEnum.ReceivedRegister,
                 };
 
                  _context.ReportDisaster.Add(reportDisaster);

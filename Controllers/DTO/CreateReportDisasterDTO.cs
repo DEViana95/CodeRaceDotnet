@@ -9,7 +9,6 @@ namespace BaseApi.Controllers.DTO
         public virtual string TxId { get; set; }
         public virtual GravityEnum Gravity { get; set; }
         public virtual long Type { get; set; }
-        public virtual StatusEnum Status { get; set; }
 
     }
 }

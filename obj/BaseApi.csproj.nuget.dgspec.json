@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj": {}
+    "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj": {
+    "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
+        "projectUniqueName": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
         "projectName": "BaseApi",
-        "projectPath": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
+        "projectPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\BaseApi.csproj",
         "packagesPath": "C:\\Users\\Gabriel Viana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\obj\\",
+        "outputPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\BaseApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gabriel Viana\\AppData\\Roaming\\NuGet\\NuGet.Config"
