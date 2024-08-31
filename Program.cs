@@ -56,10 +56,6 @@ app.UseCors("AllowAllOrigins");
 
 app.UseRouting();
 
-app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers();
-            endpoints.MapHub<ChatHub>("/registerHub"); // Mapeia o Hub
-        });
+app.MapControllers();
 
 app.Run();

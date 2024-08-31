@@ -322,3 +322,15 @@ c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\obj\Debug\net8.0\Ba
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\obj\Debug\net8.0\BaseApi.genruntimeconfig.cache
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\obj\Debug\net8.0\ref\BaseApi.dll
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\Newtonsoft.Json.dll

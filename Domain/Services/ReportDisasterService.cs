@@ -25,16 +25,13 @@ namespace BaseApi.Domain.Services
     {
         private readonly AppDbContext _context;
         private readonly IServiceProvider _service;
-        private readonly IHubContext<ChatHub> _hubContext;
         public ReportDisasterService(
             AppDbContext context,
-            IServiceProvider service,
-            IHubContext<ChatHub> hubContext
+            IServiceProvider service
         )
         {
             _context = context;
             _service = service;
-            _hubContext = hubContext;
         }
 
         public ResponseData GetAll()
@@ -43,8 +40,10 @@ namespace BaseApi.Domain.Services
             try
             {
                 var list = _context.ReportDisaster
+                    .Where(x => x.Status != StatusEnum.Cancelled && x.Status != StatusEnum.Concluded)
                     .Select(x => new
                     {
+                        x.Id,
                         x.Lat,
                         x.Lng,
                         x.CellphoneNumber,
@@ -63,7 +62,7 @@ namespace BaseApi.Domain.Services
 
                 return response.ResponseSuccess(
                     response: list,
-                    message: "Registro realizado com sucesso!"
+                    message: "Registros buscados com sucesso!"
                 );
             }
             catch (Exception ex)
@@ -106,8 +105,6 @@ namespace BaseApi.Domain.Services
                         "Não foi possível registrar sua ocorrência, por favor tente mais tarde ou nos contate pelo número " + phone
                     );
 
-                Task.Run(()=>_hubContext.Clients.All.SendAsync("ReceiveMarkers", reportDisaster));
-
                 return response.ResponseSuccess(
                     message: "Registro realizado com sucesso!"
                 );
@@ -135,7 +132,7 @@ namespace BaseApi.Domain.Services
                 if (domain is null)
                     throw new Exception("Registro não encontrado!");
 
-                if (dto.Status == StatusEnum.Cancelled)
+                if ((StatusEnum)dto.Status == StatusEnum.Cancelled)
                 {
                     if (string.IsNullOrWhiteSpace(dto.Motive))
                         throw new Exception("É necessário informar um motivo quando um registro é cancelado.");
@@ -144,10 +141,10 @@ namespace BaseApi.Domain.Services
                     domain.Finish = DateTime.UtcNow;
                 }
 
-                if (dto.Status == StatusEnum.Concluded)
+                if ((StatusEnum)dto.Status == StatusEnum.Concluded)
                     domain.Finish = DateTime.UtcNow; 
                 
-                domain.Status = dto.Status;
+                domain.Status = (StatusEnum)dto.Status;
 
                  _context.ReportDisaster.Update(domain);
 
