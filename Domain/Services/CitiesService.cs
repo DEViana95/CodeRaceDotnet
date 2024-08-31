@@ -38,7 +38,7 @@ namespace BaseApi.Domain.Services
 
                 return response.ResponseSuccess(
                     response: cities,
-                    message: "Usuários buscados com sucesso!"
+                    message: "Cidades buscadas com sucesso!"
                 );
             }
             catch (Exception ex)

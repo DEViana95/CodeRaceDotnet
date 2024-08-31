@@ -15,7 +15,7 @@ namespace BaseApi.Controllers
         }
 
         /// <summary>
-        /// Busca todas os niveis de gravidades.
+        /// Busca todos os niveis de gravidades.
         /// </summary>
         /// <returns></returns>
         [HttpGet("getallgravity")]

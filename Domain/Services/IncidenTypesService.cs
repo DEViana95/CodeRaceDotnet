@@ -129,11 +129,11 @@ namespace BaseApi.Domain.Services
                     .FirstOrDefault();
 
                 if (incidentType is null)
-                    throw new Exception("Usuário não encontrado!");
+                    throw new Exception("Desastre natural não encontrado!");
 
                 return response.ResponseSuccess(
                     response: incidentType,
-                    message: "Usuário buscado com sucesso!"
+                    message: "Desastre natural buscado com sucesso!"
                 );
             }
             catch (Exception ex)
@@ -204,7 +204,7 @@ namespace BaseApi.Domain.Services
                     .FirstOrDefault();
 
                 if (incidentType is null)
-                    throw new Exception("Usuário não encontrado!");
+                    throw new Exception("Desastre natural não encontrado!");
 
                 if (dto.Title != incidentType.Title)
                     incidentType.Title = dto.Title;
@@ -217,10 +217,10 @@ namespace BaseApi.Domain.Services
                 var result = Commit(_context);
 
                 if(result == default)
-                    throw new Exception("Erro ao editar usuário.");
+                    throw new Exception("Erro ao editar Desastre natural.");
 
                 return response.ResponseSuccess(
-                    message: "Usuário editado com sucesso!"
+                    message: "Desastre natural editado com sucesso!"
                 );
             }
             catch (Exception ex)
@@ -250,7 +250,7 @@ namespace BaseApi.Domain.Services
                     .FirstOrDefault();
                 
                 if (incidentType is null)
-                    throw new Exception("Usuário não encontrado!");
+                    throw new Exception("Desastre natural não encontrado!");
 
                 _context.IncidentTypes.Remove(incidentType);
 

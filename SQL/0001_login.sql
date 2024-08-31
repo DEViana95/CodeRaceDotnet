@@ -22,12 +22,11 @@ CREATE TABLE IF NOT EXISTS incident_types(
 );
 
 INSERT INTO incident_types VALUES
-    (DEFAULT, 'Inundações', false),
-    (DEFAULT, 'Deslizamentos de Terra' , false),
-    (DEFAULT, 'Tempestades', false),
-    (DEFAULT, 'Tornados', false),
-    (DEFAULT, 'Incêndios Florestais', false),
-    (DEFAULT, 'Cheias', false)
+    (DEFAULT, 'Inundações', true),
+    (DEFAULT, 'Deslizamentos de Terra' , true),
+    (DEFAULT, 'Tempestades', true),
+    (DEFAULT, 'Tornados', true),
+    (DEFAULT, 'Incêndios Florestais', true)
 ;
 
 DROP TABLE IF EXISTS parameters;
@@ -65,8 +64,8 @@ CREATE TABLE IF NOT EXISTS report_disaster(
 	gravity INTEGER NOT NULL DEFAULT 1,
 	"type" INTEGER NOT NULL,
 	"status" BIGINT NOT NULL DEFAULT 1,
-	created TIMESTAMP NOT NULL,
-	finish TIMESTAMP NULL,
+	created TIMESTAMP WITH TIME ZONE NOT NULL,
+	finish TIMESTAMP WITH TIME ZONE NULL,
 	motive TEXT NULL
 );
 

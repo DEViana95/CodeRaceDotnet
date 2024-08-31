@@ -63,7 +63,7 @@ namespace BaseApi.Domain.Services
                 .FirstOrDefault();
 
             if (parameters is null)
-                throw new Exception("Parametros não encontrado!");
+                throw new Exception("Parametros não encontrados!");
 
             return parameters.Phone;
         }

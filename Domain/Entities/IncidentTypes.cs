@@ -14,7 +14,7 @@ namespace BaseApi.Domain.Entities
         /// Registro Ativo
         /// </summary>
         /// <value></value>
-        public virtual Boolean Active { get; set; }
+        public virtual bool Active { get; set; }
 
         public virtual ICollection<ReportDisaster> ReportDisasters { get; set; }
 
