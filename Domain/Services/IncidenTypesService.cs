@@ -11,7 +11,7 @@ namespace BaseApi.Domain.Services
     public interface IIncidentTypesService : IServiceBase
     {
         /// <summary>
-        /// Busca os usuários páginados. 
+        /// Busca os desastres naturais páginados. 
         /// </summary>
         /// <param name="skip"></param>
         /// <param name="take"></param>
@@ -22,7 +22,7 @@ namespace BaseApi.Domain.Services
         );
 
         /// <summary>
-        /// Busca um usuário por id.
+        /// Busca um desastre natural por id.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -31,7 +31,7 @@ namespace BaseApi.Domain.Services
         );
 
         /// <summary>
-        /// Cria um usuário.
+        /// Cria um desastre natural.
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
@@ -40,7 +40,7 @@ namespace BaseApi.Domain.Services
         );
 
         /// <summary>
-        /// Atualiza o usuário.
+        /// Atualiza o desastre natural.
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
@@ -49,13 +49,19 @@ namespace BaseApi.Domain.Services
         );
 
         /// <summary>
-        /// Deleta um usuário.
+        /// Deleta um desastre natural.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         ResponseData Delete(
             long id
         );
+
+        /// <summary>
+        /// Busca os desastres naturais
+        /// </summary>
+        /// <returns></returns>
+        ResponseData GetAllIncidentTypes();
     }
 
     /// <summary>
@@ -256,6 +262,37 @@ namespace BaseApi.Domain.Services
 
                 return response.ResponseSuccess(
                     message: "Desastre natural excluído com sucesso!"
+                );
+            }
+            catch (Exception ex)
+            {
+                return response.ResponseError(
+                    message: ex.Message,
+                    statusCode: HttpStatusCode.BadRequest
+                );
+            }
+        }
+
+        /// <summary>
+        /// Busca todos os desastres naturais para seleção.
+        /// </summary>
+        /// <returns></returns>
+        public ResponseData GetAllIncidentTypes()
+        {
+            var response = new ResponseData();
+            try
+            {
+                var getIncidentTypesForSelect = _context.IncidentTypes
+                    .Select(x => new
+                    {
+                        Value = x.Id,
+                        Description = x.Title
+                    })
+                    .ToList();
+
+                return response.ResponseSuccess(
+                    response: getIncidentTypesForSelect,
+                    message: "Desastres naturais buscados com sucesso!"
                 );
             }
             catch (Exception ex)

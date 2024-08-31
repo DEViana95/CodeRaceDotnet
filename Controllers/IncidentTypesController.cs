@@ -103,5 +103,20 @@ namespace BaseApi.Controllers
                 response
             );
         }
+
+        /// <summary>
+        /// Busca os desastres naturais
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("getallincidenttypes")]
+        public IActionResult GetAllIncidentTypes()
+        {
+            var response = _incidentTypesService.GetAllIncidentTypes();
+
+            return Ok(
+                response
+            );
+        }
     }
 }
