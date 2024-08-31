@@ -15,5 +15,11 @@ namespace BaseApi.Domain.Entities
         /// </summary>
         /// <value></value>
         public virtual long AdministratorId { get; set; }
+
+        /// <summary>
+        /// Telefone.
+        /// </summary>
+        /// <value></value>
+        public virtual string Phone { get; set; }
     }
 }

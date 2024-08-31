@@ -13,6 +13,8 @@ namespace BaseApi.Domain.Services
         ResponseData Update(
             UpdateParametersDTO dto
         );
+
+        string GetPhone();
     }
 
     /// <summary>
@@ -52,6 +54,18 @@ namespace BaseApi.Domain.Services
                     statusCode: HttpStatusCode.BadRequest
                 );
             }
+        }
+
+        public string GetPhone()
+        {
+            var parameters = _context.Parameters
+                .Where(x => x.Id > 0)
+                .FirstOrDefault();
+
+            if (parameters is null)
+                throw new Exception("Parametros não encontrado!");
+
+            return parameters.Phone;
         }
 
         public ResponseData Update(UpdateParametersDTO dto)

@@ -16,6 +16,7 @@ public class AppDbContext : DbContext
     public DbSet<Users> Users { get; set; }
     public DbSet<IncidentTypes> IncidentTypes { get; set; }
     public DbSet<Parameters> Parameters { get; set; }
+    public DbSet<ReportDisaster> ReportDisaster { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +24,7 @@ public class AppDbContext : DbContext
             modelBuilder.ApplyConfiguration(new CitiesMapping());
             modelBuilder.ApplyConfiguration(new IncidentTypesMapping());
             modelBuilder.ApplyConfiguration(new ParametersMapping());
+            modelBuilder.ApplyConfiguration(new ReportDisasterMapping());
             modelBuilder.ApplyConfiguration(new UsersMapping());
 
             base.OnModelCreating(modelBuilder);
