@@ -4,7 +4,6 @@ using BaseApi.Domain.Entities;
 using BaseApi.Domain.Entities.Base;
 using BaseApi.Domain.Services.Base;
 using BaseApi.Infra.Data;
-using BaseApi.Tools;
 
 namespace BaseApi.Domain.Services
 {
@@ -92,7 +91,7 @@ namespace BaseApi.Domain.Services
             try
             {
                 var result = _context.IncidentTypes
-                    .Skip(PaginatedMethods.CalculateStartRow(skip, take)) 
+                    .Skip(Tools.Tools.CalculateStartRow(skip, take)) 
                     .Take(take)
                     .ToList();
 

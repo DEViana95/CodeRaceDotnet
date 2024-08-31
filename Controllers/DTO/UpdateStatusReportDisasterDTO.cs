@@ -6,5 +6,6 @@ namespace BaseApi.Controllers.DTO
     {
         public virtual long Id { get; set; }
         public virtual StatusEnum Status { get; set; }
+        public virtual string Motive { get; set; }
     }
 }

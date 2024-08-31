@@ -10,11 +10,12 @@ namespace BaseApi.Domain.Services
 {
     public interface IReportDisasterService : IServiceBase
     {
+        ResponseData GetAll();
+
         ResponseData Create(CreateReportDisasterDTO dto);
 
         ResponseData Update(
-            long id,
-            StatusEnum status
+            UpdateStatusReportDisasterDTO dto
         );
     }
 
@@ -29,6 +30,28 @@ namespace BaseApi.Domain.Services
         {
             _context = context;
             _service = service;
+        }
+
+        public ResponseData GetAll()
+        {
+            var response = new ResponseData();
+            try
+            {
+                var list = _context.ReportDisaster
+                    .ToList();
+
+                return response.ResponseSuccess(
+                    response: list,
+                    message: "Registro realizado com sucesso!"
+                );
+            }
+            catch (Exception ex)
+            {
+                return response.ResponseError(
+                    message: ex.Message,
+                    statusCode: HttpStatusCode.BadRequest
+                );
+            }
         }
 
         public ResponseData Create(
@@ -74,21 +97,28 @@ namespace BaseApi.Domain.Services
         }
 
         public ResponseData Update(
-            long id,
-            StatusEnum status
+            UpdateStatusReportDisasterDTO dto
         )
         {
             var response = new ResponseData();
             try
             {
                 var domain = _context.ReportDisaster
-                    .Where(x => x.Id == id)
+                    .Where(x => x.Id == dto.Id)
                     .FirstOrDefault();
 
                 if (domain is null)
                     throw new Exception("Registro não encontrado!");
+
+                if (dto.Status == StatusEnum.Cancelled)
+                {
+                    if (string.IsNullOrWhiteSpace(dto.Motive))
+                        throw new Exception("É necessário informar um motivo quando um registro é cancelado.");
+                        
+                    domain.Motive = dto.Motive;
+                }
                 
-                domain.Status = status;
+                domain.Status = dto.Status;
 
                  _context.ReportDisaster.Update(domain);
 

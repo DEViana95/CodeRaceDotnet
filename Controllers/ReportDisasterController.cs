@@ -21,6 +21,16 @@ namespace BaseApi.Controllers
             _reportDisasterService = reportDisasterService;
         }
 
+        [HttpGet("all")]
+        public IActionResult GetAll()
+        {
+            var response = _reportDisasterService.GetAll();
+
+            return Ok(
+                response
+            );
+        }
+
         [HttpPost]
         public IActionResult Create(
             [FromBody] CreateReportDisasterDTO dto
@@ -41,8 +51,7 @@ namespace BaseApi.Controllers
         )
         {
             var response = _reportDisasterService.Update(
-                id: dto.Id,
-                status: dto.Status
+                dto
             );
 
             return Ok(
