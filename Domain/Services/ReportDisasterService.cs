@@ -6,6 +6,7 @@ using BaseApi.Domain.Entities.DTO;
 using BaseApi.Domain.Services.Base;
 using BaseApi.Infra.Data;
 using BaseApi.Tools;
+using Microsoft.AspNetCore.SignalR;
 
 namespace BaseApi.Domain.Services
 {
@@ -24,13 +25,16 @@ namespace BaseApi.Domain.Services
     {
         private readonly AppDbContext _context;
         private readonly IServiceProvider _service;
+        private readonly IHubContext<ChatHub> _hubContext;
         public ReportDisasterService(
             AppDbContext context,
-            IServiceProvider service
+            IServiceProvider service,
+            IHubContext<ChatHub> hubContext
         )
         {
             _context = context;
             _service = service;
+            _hubContext = hubContext;
         }
 
         public ResponseData GetAll()
@@ -101,6 +105,8 @@ namespace BaseApi.Domain.Services
                     throw new Exception(
                         "Não foi possível registrar sua ocorrência, por favor tente mais tarde ou nos contate pelo número " + phone
                     );
+
+                Task.Run(()=>_hubContext.Clients.All.SendAsync("ReceiveMarkers", reportDisaster));
 
                 return response.ResponseSuccess(
                     message: "Registro realizado com sucesso!"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj": {}
+    "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj": {
+    "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj",
         "projectName": "BaseApi",
-        "projectPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj",
+        "projectPath": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\BaseApi.csproj",
         "packagesPath": "C:\\Users\\Gabriel Viana\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\obj\\",
+        "outputPath": "C:\\Users\\Gabriel Viana\\Desktop\\DEViana\\Csharp\\CodeRaceDotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gabriel Viana\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -46,6 +46,14 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Microsoft.AspNetCore.WebSockets": {
               "target": "Package",

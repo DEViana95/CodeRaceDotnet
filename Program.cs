@@ -1,5 +1,5 @@
-using System.Net.WebSockets;
 using BaseApi.Domain.Services;
+using BaseApi.Domain.Services.Base;
 using BaseApi.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +14,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
 
 #region Injeção de depêndencias
 builder.Services.AddScoped<ICitiesService, CitiesService>();
@@ -51,31 +54,12 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAllOrigins");
 
-app.UseWebSockets(); // Adiciona suporte a WebSocket
+app.UseRouting();
 
-app.Map("/ws", async context =>
-{
-    if (context.WebSockets.IsWebSocketRequest)
-    {
-        var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-        await SendAllData(context, webSocket);
-    }
-    else
-    {
-        context.Response.StatusCode = 400;
-    }
-});
-
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+            endpoints.MapHub<ChatHub>("/registerHub"); // Mapeia o Hub
+        });
 
 app.Run();
-
-static async Task SendAllData(HttpContext context, WebSocket webSocket)
-{
-    var reportDisasterService = context.RequestServices.GetRequiredService<IReportDisasterService>();
-    var response = reportDisasterService.GetAll();
-    var jsonResponse = System.Text.Json.JsonSerializer.Serialize(response);
-    var buffer = System.Text.Encoding.UTF8.GetBytes(jsonResponse);
-    await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
-    await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Data sent", CancellationToken.None);
-}

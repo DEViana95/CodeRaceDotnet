@@ -321,3 +321,4 @@ c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\obj\Debug\net8.0\re
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\obj\Debug\net8.0\BaseApi.pdb
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\obj\Debug\net8.0\BaseApi.genruntimeconfig.cache
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\obj\Debug\net8.0\ref\BaseApi.dll
+c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\CodeRaceDotnet\bin\Debug\net8.0\Newtonsoft.Json.dll
