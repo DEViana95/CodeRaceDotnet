@@ -34,5 +34,20 @@ namespace BaseApi.Controllers
                 response
             );
         }
+
+        [HttpPut]
+        public IActionResult Update(
+            [FromBody] UpdateStatusReportDisasterDTO dto
+        )
+        {
+            var response = _reportDisasterService.Update(
+                id: dto.Id,
+                status: dto.Status
+            );
+
+            return Ok(
+                response
+            );
+        }
     }
 }

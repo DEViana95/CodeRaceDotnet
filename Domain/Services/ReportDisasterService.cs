@@ -2,6 +2,7 @@ using System.Net;
 using BaseApi.Controllers.DTO;
 using BaseApi.Domain.Entities;
 using BaseApi.Domain.Entities.Base;
+using BaseApi.Domain.Entities.DTO;
 using BaseApi.Domain.Services.Base;
 using BaseApi.Infra.Data;
 
@@ -10,6 +11,11 @@ namespace BaseApi.Domain.Services
     public interface IReportDisasterService : IServiceBase
     {
         ResponseData Create(CreateReportDisasterDTO dto);
+
+        ResponseData Update(
+            long id,
+            StatusEnum status
+        );
     }
 
     public class ReportDisasterService : ServiceBase, IReportDisasterService
@@ -56,6 +62,45 @@ namespace BaseApi.Domain.Services
 
                 return response.ResponseSuccess(
                     message: "Registro realizado com sucesso!"
+                );
+            }
+            catch (Exception ex)
+            {
+                return response.ResponseError(
+                    message: ex.Message,
+                    statusCode: HttpStatusCode.BadRequest
+                );
+            }
+        }
+
+        public ResponseData Update(
+            long id,
+            StatusEnum status
+        )
+        {
+            var response = new ResponseData();
+            try
+            {
+                var domain = _context.ReportDisaster
+                    .Where(x => x.Id == id)
+                    .FirstOrDefault();
+
+                if (domain is null)
+                    throw new Exception("Registro não encontrado!");
+                
+                domain.Status = status;
+
+                 _context.ReportDisaster.Update(domain);
+
+                var result = Commit(_context);
+
+                if(result == default)
+                    throw new Exception(
+                        "Erro ao atualizar status de registro."
+                    );
+
+                return response.ResponseSuccess(
+                    message: "Status de registro atualizado com sucesso!"
                 );
             }
             catch (Exception ex)
