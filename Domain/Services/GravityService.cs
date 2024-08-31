@@ -33,8 +33,8 @@ namespace BaseApi.Domain.Services
                     .Cast<GravityEnum>()
                     .Select(x => new
                     {
-                        Value = x,
-                        Description = x.ToString()
+                        Value = x.ToString("D"),
+                        Label = x.ToString()
                     })
                     .ToList();
 

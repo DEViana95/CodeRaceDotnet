@@ -26,6 +26,17 @@ builder.Services.AddScoped<IGravityService, GravityService>();
 // Adiciona suporte para controladores
 builder.Services.AddControllers();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin() // Allows all origins
+                   .AllowAnyHeader() // Allows all headers
+                   .AllowAnyMethod(); // Allows all methods
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,6 +47,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAllOrigins");
 
 app.MapControllers();
 

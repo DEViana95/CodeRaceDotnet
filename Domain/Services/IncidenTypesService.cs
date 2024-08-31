@@ -285,8 +285,8 @@ namespace BaseApi.Domain.Services
                 var getIncidentTypesForSelect = _context.IncidentTypes
                     .Select(x => new
                     {
-                        Value = x.Id,
-                        Description = x.Title
+                        Value = x.Id.ToString(),
+                        Label = x.Title
                     })
                     .ToList();
 
