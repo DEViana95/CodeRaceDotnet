@@ -116,9 +116,13 @@ namespace BaseApi.Domain.Services
                 {
                     if (string.IsNullOrWhiteSpace(dto.Motive))
                         throw new Exception("É necessário informar um motivo quando um registro é cancelado.");
-                        
+
                     domain.Motive = dto.Motive;
+                    domain.Finish = DateTime.UtcNow;
                 }
+
+                if (dto.Status == StatusEnum.Concluded)
+                    domain.Finish = DateTime.UtcNow; 
                 
                 domain.Status = dto.Status;
 
