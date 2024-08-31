@@ -11,15 +11,15 @@ namespace BaseApi.Domain.Entities
         public virtual string Cellphone { get; set; }
 
         /// <summary>
-        /// Registro Ativo
-        /// </summary>
-        /// <value></value>
-        public virtual long AdministratorId { get; set; }
-
-        /// <summary>
         /// Telefone.
         /// </summary>
         /// <value></value>
         public virtual string Phone { get; set; }
+
+        /// <summary>
+        /// Telegram.
+        /// </summary>
+        /// <value></value>
+        public virtual string Telegram { get; set; }
     }
 }

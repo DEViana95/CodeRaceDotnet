@@ -37,10 +37,17 @@ namespace BaseApi.Domain.Services
             {
                 var parameters = _context.Parameters
                     .Where(x => x.Id > 0)
+                    .Select(s => new
+                    {
+                        s.Id,
+                        s.Cellphone,
+                        s.Phone,
+                        s.Telegram
+                    })
                     .FirstOrDefault();
 
                 if (parameters is null)
-                    throw new Exception("Parametros não encontrado!");
+                    throw new Exception("Parametros não encontrados!");
 
                 return response.ResponseSuccess(
                     response: parameters,
@@ -89,8 +96,8 @@ namespace BaseApi.Domain.Services
                 if (!string.IsNullOrEmpty(dto.Phone) && dto.Phone != parameters.Phone)
                     parameters.Phone = dto.Phone;
 
-                if (dto.AdministratorId.HasValue && dto.AdministratorId != parameters.AdministratorId)
-                    parameters.AdministratorId = dto.AdministratorId.Value;
+                if (dto.Telegram != parameters.Telegram)
+                    parameters.Telegram = dto.Telegram;
 
                 _context.Parameters.Update(parameters);
 

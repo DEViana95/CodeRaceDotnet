@@ -18,10 +18,10 @@ namespace BaseApi.Infra.Data.Mapping
             builder.Property(u => u.Cellphone)
                 .HasColumnName("cellphone");
 
-            builder.Property(u => u.AdministratorId)
-                .HasColumnName("administrator_id");
-
             builder.Property(u => u.Phone)
+                .HasColumnName("phone");
+
+            builder.Property(u => u.Telegram)
                 .HasColumnName("phone");
         }
     }
