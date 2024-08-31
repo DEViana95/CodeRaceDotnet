@@ -34,7 +34,7 @@ namespace BaseApi.Domain.Services
                     .Select(x => new
                     {
                         Value = x.ToString("D"),
-                        Label = x.ToString()
+                        Label = x.GetDescription()
                     })
                     .ToList();
 

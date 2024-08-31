@@ -20,6 +20,10 @@ namespace BaseApi.Infra.Data.Mapping
 
             builder.Property(u => u.Active)
                 .HasColumnName("active");
+
+            builder.HasMany(u => u.ReportDisasters)
+                .WithOne(r => r.Type)
+                .HasForeignKey(r => r.TypeId);
         }
     }
 }

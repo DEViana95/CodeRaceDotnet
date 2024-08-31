@@ -5,24 +5,24 @@ namespace BaseApi.Domain.Entities.DTO
     public enum GravityEnum
     {
         [Description("Um")]
-        Um = 1,
+        One = 1,
         [Description("Dois")]
-        Dois = 2,
+        Two = 2,
         [Description("Três")]
-        Três = 3,
+        Three = 3,
         [Description("Quatro")]
-        Quatro = 4,
+        Four = 4,
         [Description("Cinco")]
-        Cinco = 5,
+        Five = 5,
         [Description("Seis")]
-        Seis = 6,
+        Six = 6,
         [Description("Sete")]
-        Sete = 7,
-        [Description("Oite")]
-        Oite = 8,
+        Seven = 7,
+        [Description("Oito")]
+        Eight = 8,
         [Description("Nove")]
-        Nove = 9,
+        Nine = 9,
         [Description("Dez")]
-        Dez = 10,
+        Ten = 10,
     }
 }

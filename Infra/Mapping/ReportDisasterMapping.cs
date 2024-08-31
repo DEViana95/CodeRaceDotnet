@@ -34,7 +34,7 @@ namespace BaseApi.Infra.Mapping
             builder.Property(u => u.Gravity)
                 .HasColumnName("gravity");
 
-            builder.Property(u => u.Type)
+            builder.Property(u => u.TypeId)
                 .HasColumnName("type");
 
             builder.Property(u => u.Status)

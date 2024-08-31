@@ -15,5 +15,8 @@ namespace BaseApi.Domain.Entities
         /// </summary>
         /// <value></value>
         public virtual Boolean Active { get; set; }
+
+        public virtual ICollection<ReportDisaster> ReportDisasters { get; set; }
+
     }
 }

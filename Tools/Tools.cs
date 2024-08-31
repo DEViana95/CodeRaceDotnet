@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace BaseApi.Tools
 {
     public class Tools
@@ -52,6 +54,23 @@ namespace BaseApi.Tools
 
             // Verifica se os dígitos verificadores são válidos
             return cpf.EndsWith($"{digito1}{digito2}");
+        }
+    }
+
+    public static class EnumExtensions
+    {
+        public static string GetDescription(this Enum value)
+        {
+            var fieldInfo = value.GetType().GetField(value.ToString());
+            var descriptionAttributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            return descriptionAttributes.Length > 0 ? descriptionAttributes[0].Description : value.ToString();
+        }
+
+        public static (int Value, string Description) GetValueAndDescription(this Enum value)
+        {
+            int intValue = Convert.ToInt32(value);
+            return (intValue, value.GetDescription());
         }
     }
 }

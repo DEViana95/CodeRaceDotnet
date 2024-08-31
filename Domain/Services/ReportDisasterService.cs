@@ -5,6 +5,7 @@ using BaseApi.Domain.Entities.Base;
 using BaseApi.Domain.Entities.DTO;
 using BaseApi.Domain.Services.Base;
 using BaseApi.Infra.Data;
+using BaseApi.Tools;
 
 namespace BaseApi.Domain.Services
 {
@@ -38,6 +39,22 @@ namespace BaseApi.Domain.Services
             try
             {
                 var list = _context.ReportDisaster
+                    .Select(x => new
+                    {
+                        x.Lat,
+                        x.Lng,
+                        x.CellphoneNumber,
+                        x.TxId,
+                        x.Gravity,
+                        GravityDescription = x.Gravity.GetDescription(),
+                        x.TypeId,
+                        IncidentTypeDescription = x.Type.Title,
+                        x.Status,
+                        StatusDescription = x.Status.GetDescription(),
+                        x.Created,
+                        x.Finish,
+                        x.Motive
+                    })
                     .ToList();
 
                 return response.ResponseSuccess(
@@ -67,7 +84,7 @@ namespace BaseApi.Domain.Services
                     Lng = dto.Lng,
                     TxId = dto.TxId,
                     Gravity = (GravityEnum)dto.Gravity,
-                    Type = dto.Type,
+                    TypeId = dto.Type,
                     CellphoneNumber = dto.CellphoneNumber,
                     Status = StatusEnum.ReceivedRegister,
                     Created = DateTime.UtcNow

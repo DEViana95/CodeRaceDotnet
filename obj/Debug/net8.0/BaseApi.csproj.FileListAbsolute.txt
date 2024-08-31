@@ -212,3 +212,4 @@ C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\obj\Debug\net8.0\Base
 C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\obj\Debug\net8.0\BaseApi.genruntimeconfig.cache
 C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\obj\Debug\net8.0\ref\BaseApi.dll
 c:\Users\Gabriel Viana\Desktop\DEViana\Csharp\BaseApi\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\GV-DIEGO-TESTEDEV\Desktop\CodeRace\CodeRaceDotnet\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
